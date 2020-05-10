@@ -14,7 +14,7 @@ class SessionController {
       return res.status(401).json({ message: "Credentials fail" });
     }
 
-    return res.json({ user });
+    return res.json({ user, token: user.generateToken() });
   }
 }
 
